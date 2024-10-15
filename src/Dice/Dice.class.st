@@ -45,7 +45,7 @@ Dice >> printOn: aStream [
         nextPutAll: ')'.
 ]
 
-{ #category : 'Dice' }
+{ #category : 'DiceMethod' }
 Dice >> roll [
     ^ faces atRandom.
 ]

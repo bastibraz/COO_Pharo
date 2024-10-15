@@ -29,3 +29,45 @@ DieHandleTest >> testCreationAdding [
 		          yourself.
 	self assert: handle diceNumber equals: 2
 ]
+
+{ #category : 'tests' }
+DieHandleTest >> testRoll [
+
+	| handle result maxSum |
+	handle := DiceHandle new
+		          addDice: (Dice withFaces: 6);
+		          addDice: (Dice withFaces: 10);
+		          yourself.
+	result := handle roll.
+	maxSum := 6 + 10.
+	self assert: result >= 2.
+	self assert: result <= maxSum
+]
+
+{ #category : 'tests' }
+DieHandleTest >> testSimpleHandle [
+    self assert: (2 D20) diceNumber equals: 2.
+]
+
+{ #category : 'tests' }
+DieHandleTest >> testSumOfHandles [
+
+	| hd1 hd2 hd3 |
+	hd1 := DiceHandle new
+		       addDice: (Dice withFaces: 20);
+		       addDice: (Dice withFaces: 20);
+		       yourself.
+	hd2 := DiceHandle new
+		       addDice: (Dice withFaces: 10);
+		       addDice: (Dice withFaces: 10);
+		       yourself.
+	hd3 := hd1 + hd2.
+	self assert: hd3 diceNumber equals: 4
+]
+
+{ #category : 'tests' }
+DieHandleTest >> testSumming [
+    | handle |
+    handle := 2 D20 + 3 D10.
+    self assert: handle diceNumber equals: 5.
+]

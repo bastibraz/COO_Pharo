@@ -14,6 +14,15 @@ Class {
 	#package : 'Dice'
 }
 
+{ #category : 'arithmetic' }
+DiceHandle >> + aDiceHandle [
+    | newHandle |
+    newHandle := DiceHandle new.
+    newHandle dice addAll: self dice.
+    newHandle dice addAll: aDiceHandle dice.
+    ^ newHandle.
+]
+
 { #category : 'adding' }
 DiceHandle >> addDice: aDice [
 
@@ -35,4 +44,11 @@ DiceHandle >> diceNumber [
 DiceHandle >> initialize [
 	super initialize.
 	dice := OrderedCollection new
+]
+
+{ #category : 'Dice' }
+DiceHandle >> roll [ 
+| results |
+    results := dice collect: [ :each | each roll ].
+    ^ results inject: 0 into: [ :sum :each | sum + each ].
 ]
