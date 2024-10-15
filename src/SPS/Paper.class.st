@@ -1,5 +1,5 @@
 "
-Paper win against Stone but lose against scissors
+Paper win against Stone and Spock but lose against Scissors and Lizzard
 "
 Class {
 	#name : 'Paper',
@@ -13,6 +13,12 @@ Paper >> play: anotherTool [
     ^ anotherTool playAgainstPaper: self.
 ]
 
+{ #category : 'as yet unclassified' }
+Paper >> playAgainstLizzard: aLizzard [
+
+	^ #lizzard 
+]
+
 { #category : 'play' }
 Paper >> playAgainstPaper: aPaper [
 
@@ -23,6 +29,12 @@ Paper >> playAgainstPaper: aPaper [
 Paper >> playAgainstScissors: aScissors [
 
 	^ #scissors
+]
+
+{ #category : 'as yet unclassified' }
+Paper >> playAgainstSpock: aSpock [
+
+	^ #paper
 ]
 
 { #category : 'play' }
