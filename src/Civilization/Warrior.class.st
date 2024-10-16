@@ -9,8 +9,14 @@ Class {
 Warrior >> initialize [
 
 	super initialize.
+	self xp: 1.
 	self ap: 10.
 	self dp: 10.
 	self hp: 100.
-	self xp: 1
+]
+
+{ #category : 'as yet unclassified' }
+Warrior >> receiveAttackFrom: anAttacker [
+
+	^ anAttacker attackWarrior: self
 ]

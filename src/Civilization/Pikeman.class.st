@@ -9,8 +9,14 @@ Class {
 Pikeman >> initialize [
 
 	super initialize.
+	self xp: 1.
 	self ap: 5.
 	self dp: 20.
 	self hp: 100.
-	self xp: 1
+]
+
+{ #category : 'as yet unclassified' }
+Pikeman >> receiveAttackFrom: anAttacker [
+
+	^ anAttacker attackPikeman: self
 ]

@@ -2,8 +2,6 @@ Class {
 	#name : 'Terrain',
 	#superclass : 'Tile',
 	#instVars : [
-		'Ati',
-		'Dti',
 		'ati',
 		'dti'
 	],

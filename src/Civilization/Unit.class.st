@@ -2,17 +2,10 @@ Class {
 	#name : 'Unit',
 	#superclass : 'Tile',
 	#instVars : [
-		'Ad',
-		'Dp',
-		'Hp',
-		'Xp',
 		'ap',
 		'hp',
 		'dp',
 		'xp'
-	],
-	#classVars : [
-		'Ap'
 	],
 	#category : 'Civilization',
 	#package : 'Civilization'
@@ -25,22 +18,15 @@ Unit >> ap [
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> ap: anObject [
+Unit >> ap: anInteger [
 
-	ap := anObject
+	ap := anInteger * (0.5 * xp + 0.5)
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> attack: anUnit [
+Unit >> attack: anotherUnit [
 
-	anUnit defend: self.
-	hp := hp - anUnit ap
-]
-
-{ #category : 'as yet unclassified' }
-Unit >> defend: anUnit [
-
-	hp := hp - anUnit ap
+	anotherUnit receiveAttackFrom: self
 ]
 
 { #category : 'accessing' }
@@ -50,9 +36,9 @@ Unit >> dp [
 ]
 
 { #category : 'accessing' }
-Unit >> dp: anObject [
+Unit >> dp: anInteger [
 
-	dp := anObject
+	dp := anInteger * (0.5 * xp + 0.5)
 ]
 
 { #category : 'as yet unclassified' }
@@ -62,9 +48,26 @@ Unit >> hp [
 ]
 
 { #category : 'accessing' }
-Unit >> hp: anObject [
+Unit >> hp: anInteger [
 
-	hp := anObject
+	hp := anInteger
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> lvUp [
+	xp:=xp+1.
+	self ap: ap.
+	self dp: dp.
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> receiveAttackFrom: anAttacker [
+self subclassResponsibility.
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> takeDamage: dmg [
+    hp := hp - dmg.
 ]
 
 { #category : 'accessing' }
@@ -74,7 +77,7 @@ Unit >> xp [
 ]
 
 { #category : 'accessing' }
-Unit >> xp: anObject [
+Unit >> xp: anInteger [
 
-	xp := anObject
+	xp := anInteger 
 ]

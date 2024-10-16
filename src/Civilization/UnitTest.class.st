@@ -6,6 +6,20 @@ Class {
 }
 
 { #category : 'tests' }
+UnitTest >> testLvUp [
+
+	| w1 |
+	w1 := Warrior new.
+	self assert: w1 dp equals: 10.
+	self assert: w1 ap equals: 10.
+	self assert: w1 xp equals: 1.
+	w1 lvUp.
+	self assert: w1 dp equals: 15.
+	self assert: w1 ap equals: 15.
+	self assert: w1 xp equals: 2.
+]
+
+{ #category : 'tests' }
 UnitTest >> testWarriorAtkWarrior [
 
 	| w1 w2 |
