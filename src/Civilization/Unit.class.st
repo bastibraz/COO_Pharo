@@ -24,9 +24,39 @@ Unit >> ap: anInteger [
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> attack: anotherUnit [
+Unit >> attack: aDefender [
+    | defenderDamage attackerDamage |
+    defenderDamage := aDefender damageFrom: self.
+    aDefender hp: aDefender hp - defenderDamage.
+    attackerDamage := self damageFrom: aDefender.
+    self hp: self hp - attackerDamage.
+]
 
-	anotherUnit receiveAttackFrom: self
+{ #category : 'as yet unclassified' }
+Unit >> damageFrom: anDefender [
+
+	self subclassResponsibility
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> damageToArcher: anArcher [
+
+	^ self ap
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> damageToKnight: aKnight [
+    ^ self ap
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> damageToPikeman: aPikeman [
+    ^ self ap
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> damageToWarrior: aWarrior [
+    ^ self ap
 ]
 
 { #category : 'accessing' }

@@ -5,6 +5,17 @@ Class {
 	#package : 'Civilization'
 }
 
+{ #category : 'as yet unclassified' }
+Pikeman >> damageFrom: anAttacker [
+
+	^ anAttacker damageToPikeman: self
+]
+
+{ #category : 'as yet unclassified' }
+Pikeman >> damageToKnight: aKnight [
+    ^ self ap * 2
+]
+
 { #category : 'initialization' }
 Pikeman >> initialize [
 
@@ -18,5 +29,5 @@ Pikeman >> initialize [
 { #category : 'as yet unclassified' }
 Pikeman >> receiveAttackFrom: anAttacker [
 
-	^ anAttacker attackPikeman: self
+	^ anAttacker attackWarrior: self
 ]

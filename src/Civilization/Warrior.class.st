@@ -5,6 +5,11 @@ Class {
 	#package : 'Civilization'
 }
 
+{ #category : 'as yet unclassified' }
+Warrior >> damageFrom: anAttacker [
+    ^ anAttacker damageToWarrior: self
+]
+
 { #category : 'initialization' }
 Warrior >> initialize [
 
