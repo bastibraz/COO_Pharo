@@ -9,7 +9,6 @@ Class {
 Flat >> initialize [
 
 	super initialize.
-	self Ati: 0.
-	self Dti: 0.
-
+	self ati: 0.
+	self dti: 0
 ]

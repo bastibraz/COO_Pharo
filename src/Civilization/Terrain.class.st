@@ -3,31 +3,34 @@ Class {
 	#superclass : 'Tile',
 	#instVars : [
 		'Ati',
-		'Dti'
+		'Dti',
+		'ati',
+		'dti'
 	],
 	#category : 'Civilization',
 	#package : 'Civilization'
 }
 
 { #category : 'accessing' }
-Terrain >> Ati [
-	^Ati
+Terrain >> ati [
+
+	^ ati
 ]
 
 { #category : 'accessing' }
-Terrain >> Ati: anObject [
+Terrain >> ati: anObject [
 
-	Ati := anObject
+	ati := anObject
 ]
 
 { #category : 'accessing' }
-Terrain >> Dti [
+Terrain >> dti [
 
-	^ Dti
+	^ dti
 ]
 
 { #category : 'accessing' }
-Terrain >> Dti: anObject [
+Terrain >> dti: anObject [
 
-	Dti := anObject
+	dti := anObject
 ]

@@ -9,8 +9,8 @@ Class {
 Warrior >> initialize [
 
 	super initialize.
-	self Ap: 10.
-	self Dp: 10.
-	self Hp: 100.
-	self Xp: 1
+	self ap: 10.
+	self dp: 10.
+	self hp: 100.
+	self xp: 1
 ]

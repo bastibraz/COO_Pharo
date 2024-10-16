@@ -9,8 +9,8 @@ Class {
 Pikeman >> initialize [
 
 	super initialize.
-	self Ap: 5.
-	self Dp: 20.
-	self Hp: 100.
-	self Xp: 1
+	self ap: 5.
+	self dp: 20.
+	self hp: 100.
+	self xp: 1
 ]

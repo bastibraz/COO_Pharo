@@ -9,8 +9,8 @@ Class {
 Knight >> initialize [
 
 	super initialize.
-	self Ap: 20.
-	self Dp: 5.
-	self Hp: 100.
-	self Xp: 1
+	self ap: 20.
+	self dp: 5.
+	self hp: 100.
+	self xp: 1
 ]

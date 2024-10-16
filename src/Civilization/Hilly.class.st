@@ -9,6 +9,6 @@ Class {
 Hilly >> initialize [
 
 	super initialize.
-	self Ati: 0.
-	self Dti: 10.
+	self ati: 0.
+	self dti: 10
 ]

@@ -5,7 +5,11 @@ Class {
 		'Ad',
 		'Dp',
 		'Hp',
-		'Xp'
+		'Xp',
+		'ap',
+		'hp',
+		'dp',
+		'xp'
 	],
 	#classVars : [
 		'Ap'
@@ -15,57 +19,62 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-Unit >> Ap [
-	^Ap
+Unit >> ap [
+
+	^ ap
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> Ap: anObject [
+Unit >> ap: anObject [
 
-	Ap := anObject
+	ap := anObject
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> Attack: anUnit [
-	anUnit Defend: self.
-	Hp := Hp - anUnit Ap 
+Unit >> attack: anUnit [
+
+	anUnit defend: self.
+	hp := hp - anUnit ap
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> Defend: anUnit [
+Unit >> defend: anUnit [
 
-	Hp := Hp - anUnit Ap
+	hp := hp - anUnit ap
 ]
 
 { #category : 'accessing' }
-Unit >> Dp [
-	^Dp
+Unit >> dp [
+
+	^ dp
 ]
 
 { #category : 'accessing' }
-Unit >> Dp: anObject [
+Unit >> dp: anObject [
 
-	Dp := anObject
+	dp := anObject
 ]
 
 { #category : 'as yet unclassified' }
-Unit >> Hp [
-	^Hp
+Unit >> hp [
+
+	^ hp
 ]
 
 { #category : 'accessing' }
-Unit >> Hp: anObject [
+Unit >> hp: anObject [
 
-	Hp := anObject
+	hp := anObject
 ]
 
 { #category : 'accessing' }
-Unit >> Xp [
-	^Xp
+Unit >> xp [
+
+	^ xp
 ]
 
 { #category : 'accessing' }
-Unit >> Xp: anObject [
+Unit >> xp: anObject [
 
-	Xp := anObject
+	xp := anObject
 ]
