@@ -39,3 +39,15 @@ ColorBlocTest >> testColoredBlocInGrid [
 
 	space show
 ]
+
+{ #category : 'tests' }
+ColorBlocTest >> testFillGrid [
+
+	| space grid |
+	space := BlSpace new.
+	grid := Grid new.
+	grid fillGrid: 50.
+	space root addChild: grid.
+
+	space show
+]
