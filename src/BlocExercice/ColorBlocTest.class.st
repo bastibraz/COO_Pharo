@@ -51,3 +51,15 @@ ColorBlocTest >> testFillGrid [
 
 	space show
 ]
+
+{ #category : 'tests' }
+ColorBlocTest >> testFillGridWithLight [
+
+	| space grid |
+	space := BlSpace new.
+	grid := Grid new.
+	grid fillGridWithLight: 50.
+	space root addChild: grid.
+
+	space show
+]

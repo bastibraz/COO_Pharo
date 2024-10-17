@@ -22,7 +22,7 @@ ColoredBloc >> initialize [
 
 	super initialize.
 	self geometry: BlRectangleGeometry new.
-	self size: 10 @ 10.
+	self size: 50 @ 50.
 	self background: Color random
 ]
 
