@@ -93,12 +93,13 @@ MGGame >> matchesCount [
 
 { #category : 'initialization' }
 MGGame >> resetStep [
-| lastCard |
-lastCard := self chosenCards last.
-self chosenCards
-allButLastDo: [ :aCard | aCard flip ];
-removeAll;
-add: lastCard
+
+	| lastCard |
+	lastCard := self chosenCards last.
+	self chosenCards
+		allButLastDo: [ :aCard | aCard flip ];
+		removeAll;
+		add: lastCard
 ]
 
 { #category : 'asserting' }

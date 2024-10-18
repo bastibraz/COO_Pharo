@@ -48,6 +48,11 @@ self showCardFace
 ]
 
 { #category : 'as yet unclassified' }
+MGCardElement >> disappear [
+self visibility: BlVisibility hidden
+]
+
+{ #category : 'as yet unclassified' }
 MGCardElement >> fillUpFrontElement [
 frontElement text: (card symbol asString asRopedText
 fontSize: self fontPointSize;
@@ -95,7 +100,47 @@ frontElement := BlTextElement new
 
 { #category : 'as yet unclassified' }
 MGCardElement >> onDisappear [
-self opacity: 0
+| vanish enlarge minimize disappear |
+enlarge := BlTransformAnimation scale: 1.15 @ 1.15.
+enlarge
+absolute;
+easing: BlEasing bounceOut;
+duration: 0.5 seconds.
+vanish := BlOpacityAnimation new
+opacity: 0;
+duration: 0.35 seconds.
+minimize := BlTransformAnimation scale: 0.01 @ 0.01.
+minimize
+absolute;
+easing: BlEasing linear;
+duration: 0.35 seconds.
+disappear := BlParallelAnimation withAll: { vanish . minimize }.
+self addAnimation: (BlSequentialAnimation withAll: { enlarge.
+disappear })
+]
+
+{ #category : 'as yet unclassified' }
+MGCardElement >> onFlippedBack [
+| animation |
+animation := BlTransformAnimation scale: 1@1.
+animation
+absolute;
+easing: BlEasing bounceOut;
+duration: 0.35 seconds.
+self addAnimation: animation.
+self showBackFace
+]
+
+{ #category : 'as yet unclassified' }
+MGCardElement >> onFlippedFace [
+| animation |
+animation := BlTransformAnimation scale: 0.85 @ 0.85.
+animation
+absolute;
+easing: BlQuinticInterpolator default;
+duration: 0.3 seconds.
+self addAnimation: animation.
+self showFrontFace
 ]
 
 { #category : 'as yet unclassified' }
@@ -107,8 +152,8 @@ self addChild: backElement
 { #category : 'as yet unclassified' }
 MGCardElement >> showCardFace [
 card isFlipped
-ifTrue: [ self showFrontFace ]
-ifFalse: [ self showBackFace ]
+ifTrue: [ self onFlippedFace ]
+ifFalse: [ self onFlippedBack ]
 ]
 
 { #category : 'as yet unclassified' }
