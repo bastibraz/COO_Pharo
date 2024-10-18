@@ -23,7 +23,19 @@ Pikeman >> initialize [
 	self xp: 1.
 	apBase := 5.
 	dpBase := 20.
-	self hp: 100
+	self hp: 100.
+	self terrain: Flat new.
+]
+
+{ #category : 'initialization' }
+Pikeman >> initialize: onTerrain [
+
+	super initialize.
+	self xp: 1.
+	apBase := 5.
+	dpBase := 20.
+	self hp: 100.
+	self terrain: onTerrain.
 ]
 
 { #category : 'as yet unclassified' }

@@ -5,6 +5,20 @@ Class {
 	#package : 'Civilization'
 }
 
+{ #category : 'as yet unclassified' }
+Hilly >> defendingImpactFor: anUnit attack: anotherUnit [
+
+	(anotherUnit class equals: Knight)
+		ifTrue: [ ^ 20 ]
+]
+
+{ #category : 'as yet unclassified' }
+Hilly >> defendingImpactFor: anUnit attacking: anotherUnit [
+    (anotherUnit class equals: Knight)
+        ifTrue: [^20]
+        ifFalse: [^10].
+]
+
 { #category : 'initialization' }
 Hilly >> initialize [
 

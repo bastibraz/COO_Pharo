@@ -17,7 +17,19 @@ Archer >> initialize [
 	self xp: 1.
 	apBase := 20.
 	dpBase := 5.
-	self hp: 100
+	self hp: 100.
+	self terrain: Flat new.
+]
+
+{ #category : 'initialization' }
+Archer >> initialize: onTerrain [
+
+	super initialize.
+	self xp: 1.
+	apBase := 20.
+	dpBase := 5.
+	self hp: 100.
+	self terrain: onTerrain
 ]
 
 { #category : 'as yet unclassified' }

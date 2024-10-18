@@ -16,9 +16,15 @@ Terrain >> ati [
 ]
 
 { #category : 'accessing' }
-Terrain >> ati: anObject [
+Terrain >> ati: anInteger [
 
-	ati := anObject
+	ati := anInteger
+]
+
+{ #category : 'as yet unclassified' }
+Terrain >> defendingImpactFor: anUnit attack: anotherUnit [
+
+	
 ]
 
 { #category : 'accessing' }
@@ -28,7 +34,7 @@ Terrain >> dti [
 ]
 
 { #category : 'accessing' }
-Terrain >> dti: anObject [
+Terrain >> dti: anInteger [
 
-	dti := anObject
+	dti := anInteger
 ]

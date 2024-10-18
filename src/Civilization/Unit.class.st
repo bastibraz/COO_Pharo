@@ -7,7 +7,8 @@ Class {
 		'dp',
 		'xp',
 		'apBase',
-		'dpBase'
+		'dpBase',
+		'terrain'
 	],
 	#category : 'Civilization',
 	#package : 'Civilization'
@@ -32,6 +33,16 @@ Unit >> attack: aDefender [
     aDefender hp: aDefender hp - defenderDamage.
     attackerDamage := self damageFrom: aDefender.
     self hp: self hp - attackerDamage.
+]
+
+{ #category : 'as yet unclassified' }
+Unit >> attack: aDefender on: aTerrain [
+
+	| defenderDamage attackerDamage |
+	defenderDamage := aDefender damageFrom: self.
+	aDefender hp: aDefender hp - defenderDamage + aTerrain dti.
+	attackerDamage := self damageFrom: aDefender.
+	self hp: self hp - attackerDamage
 ]
 
 { #category : 'as yet unclassified' }
@@ -100,6 +111,18 @@ self subclassResponsibility.
 { #category : 'as yet unclassified' }
 Unit >> takeDamage: dmg [
     hp := hp - dmg.
+]
+
+{ #category : 'accessing' }
+Unit >> terrain [
+
+	^ terrain
+]
+
+{ #category : 'accessing' }
+Unit >> terrain: aTerrain [
+
+	terrain:= aTerrain.
 ]
 
 { #category : 'accessing' }
