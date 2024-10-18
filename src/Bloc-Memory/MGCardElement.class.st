@@ -26,15 +26,25 @@ MGCardElement >> card [
 
 { #category : 'accessing' }
 MGCardElement >> card: aCard [
-"Attach a card model and subscribe to its announcements."
 card := aCard.
 self fillUpFrontElement.
 self showCardFace.
+card announcer
+when: MGCardFlippedAnnouncement
+send: #showCardFace to: self;
+when: MGCardDisappearAnnouncement
+send: #onDisappear to: self
 ]
 
 { #category : 'as yet unclassified' }
 MGCardElement >> cardExtent [
 ^ 80@80
+]
+
+{ #category : 'public' }
+MGCardElement >> click [
+self parent memoryGame chooseCard: self card.
+self showCardFace
 ]
 
 { #category : 'as yet unclassified' }
@@ -60,11 +70,13 @@ MGCardElement >> fontPointSize [
 MGCardElement >> initialize [
 super initialize.
 self initializeBackElement.
+self initializeFrontElement.
 self size: self cardExtent.
 self layout: BlLinearLayout new alignCenter.
 self background: self backgroundPaint.
 self geometry: (BlRoundedRectangleGeometry cornerRadius: 12).
-self card: (MGCard new symbol: $a)
+self card: (MGCard new symbol: $a).
+self addEventHandlerOn: BlClickEvent do: [ :anEvent | self click ]
 ]
 
 { #category : 'initialization' }
@@ -79,6 +91,11 @@ MGCardElement >> initializeBackElement [
 { #category : 'initialization' }
 MGCardElement >> initializeFrontElement [
 frontElement := BlTextElement new
+]
+
+{ #category : 'as yet unclassified' }
+MGCardElement >> onDisappear [
+self opacity: 0
 ]
 
 { #category : 'as yet unclassified' }
