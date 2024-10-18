@@ -16,7 +16,8 @@ Class {
 { #category : 'as yet unclassified' }
 Unit >> ap [
 
-	ap := apBase * (0.5 * xp + 0.5)
+	ap := apBase * (0.5 * xp + 0.5).
+	^ ap
 ]
 
 { #category : 'accessing' }
@@ -63,7 +64,8 @@ Unit >> damageToWarrior: aWarrior [
 { #category : 'accessing' }
 Unit >> dp [
 
-	dp := dpBase * (1 + ((xp - 1) * 0.75))
+	dp := dpBase * (1 + ((xp - 1 )* 0.75)).
+	^dp
 ]
 
 { #category : 'accessing' }

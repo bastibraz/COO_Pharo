@@ -15,8 +15,8 @@ UnitTest >> testKnightlv2AtkPikemanlv3 [
 	p2 lvUp.
 	p2 lvUp.
 	k1 attack: p2.
-	self assert: k1 hp equals: 70.
-	self assert: p2 hp equals: 70
+	self assert: k1 hp equals: 80.0.
+	self assert: p2 hp equals: 70.0
 ]
 
 { #category : 'tests' }
@@ -29,8 +29,8 @@ UnitTest >> testKnightlv2AtkWarriorlv3 [
 	w2 lvUp.
 	w2 lvUp.
 	k1 attack: w2.
-	self assert: k1 hp equals: 70.
-	self assert: w2 hp equals: 40
+	self assert: k1 hp equals: 80.0.
+	self assert: w2 hp equals: 40.0
 ]
 
 { #category : 'tests' }
@@ -38,17 +38,17 @@ UnitTest >> testLvUp [
 
 	| w1 |
 	w1 := Warrior new.
-	self assert: w1 dp equals: 10.
-	self assert: w1 ap equals: 10.
+	self assert: w1 dp equals: 10.0.
+	self assert: w1 ap equals: 10.0.
 	self assert: w1 xp equals: 1.
 	w1 lvUp.
 	self assert: w1 dp equals: 17.5.
-	self assert: w1 ap equals: 15.
+	self assert: w1 ap equals: 15.0.
 	self assert: w1 xp equals: 2.
 	w1 lvUp.
-	self assert: w1 ap equals: 20.
+	self assert: w1 ap equals: 20.0.
 	self assert: w1 xp equals: 3.
-	self assert: w1 dp equals: 25.
+	self assert: w1 dp equals: 25.0
 ]
 
 { #category : 'tests' }

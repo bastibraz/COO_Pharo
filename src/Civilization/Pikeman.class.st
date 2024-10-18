@@ -21,8 +21,6 @@ Pikeman >> initialize [
 
 	super initialize.
 	self xp: 1.
-	self ap: 5.
-	self dp: 20.
 	apBase := 5.
 	dpBase := 20.
 	self hp: 100
@@ -31,5 +29,5 @@ Pikeman >> initialize [
 { #category : 'as yet unclassified' }
 Pikeman >> receiveAttackFrom: anAttacker [
 
-	^ anAttacker attackWarrior: self
+	^ anAttacker attackPikeman: self
 ]

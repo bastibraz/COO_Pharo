@@ -15,10 +15,8 @@ Archer >> initialize [
 
 	super initialize.
 	self xp: 1.
-	self ap: 20.
-	self dp: 5.
-	self apBase: 20.
-	self dpBase: 5.
+	apBase := 20.
+	dpBase := 5.
 	self hp: 100
 ]
 

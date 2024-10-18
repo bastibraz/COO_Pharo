@@ -15,8 +15,6 @@ Warrior >> initialize [
 
 	super initialize.
 	self xp: 1.
-	self ap: 10.
-	self dp: 10.
 	apBase := 10.
 	dpBase := 10.
 	self hp: 100
