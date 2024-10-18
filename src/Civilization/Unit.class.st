@@ -5,7 +5,9 @@ Class {
 		'ap',
 		'hp',
 		'dp',
-		'xp'
+		'xp',
+		'apBase',
+		'dpBase'
 	],
 	#category : 'Civilization',
 	#package : 'Civilization'
@@ -14,13 +16,12 @@ Class {
 { #category : 'as yet unclassified' }
 Unit >> ap [
 
-	^ ap
+	ap := apBase * (0.5 * xp + 0.5)
 ]
 
-{ #category : 'as yet unclassified' }
-Unit >> ap: anInteger [
-
-	ap := anInteger * (0.5 * xp + 0.5)
+{ #category : 'accessing' }
+Unit >> apBase [
+ ^ apBase.
 ]
 
 { #category : 'as yet unclassified' }
@@ -62,13 +63,13 @@ Unit >> damageToWarrior: aWarrior [
 { #category : 'accessing' }
 Unit >> dp [
 
-	^ dp
+	dp := dpBase * (1 + ((xp - 1) * 0.75))
 ]
 
 { #category : 'accessing' }
-Unit >> dp: anInteger [
+Unit >> dpBase [
 
-	dp := anInteger * (0.5 * xp + 0.5)
+	^ dpBase
 ]
 
 { #category : 'as yet unclassified' }
@@ -85,9 +86,8 @@ Unit >> hp: anInteger [
 
 { #category : 'as yet unclassified' }
 Unit >> lvUp [
-	xp:=xp+1.
-	self ap: ap.
-	self dp: dp.
+
+	xp := xp + 1.
 ]
 
 { #category : 'as yet unclassified' }

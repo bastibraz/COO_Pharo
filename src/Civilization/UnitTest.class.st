@@ -42,9 +42,13 @@ UnitTest >> testLvUp [
 	self assert: w1 ap equals: 10.
 	self assert: w1 xp equals: 1.
 	w1 lvUp.
-	self assert: w1 dp equals: 15.
+	self assert: w1 dp equals: 17.5.
 	self assert: w1 ap equals: 15.
 	self assert: w1 xp equals: 2.
+	w1 lvUp.
+	self assert: w1 ap equals: 20.
+	self assert: w1 xp equals: 3.
+	self assert: w1 dp equals: 25.
 ]
 
 { #category : 'tests' }

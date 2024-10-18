@@ -17,7 +17,9 @@ Warrior >> initialize [
 	self xp: 1.
 	self ap: 10.
 	self dp: 10.
-	self hp: 100.
+	apBase := 10.
+	dpBase := 10.
+	self hp: 100
 ]
 
 { #category : 'as yet unclassified' }
